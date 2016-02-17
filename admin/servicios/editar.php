@@ -15,13 +15,13 @@
 	//obtener los datos de la bd
 	include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
 	
-	$sql="SELECT * FROM noticias WHERE ID='$ID'";
+	$sql="SELECT * FROM servicios WHERE ID='$ID'";
 
 	$result = mysqli_query($con,$sql);
 	
 	if($result===false || $result->num_rows===0)
 	{
-		header("location:/admin/noticias");
+		header("location:/admin/servicios");
 	}
 	
 	for ($i = 0; $i <$result->num_rows; $i++) {
@@ -29,10 +29,8 @@
 		$fila = $result->fetch_assoc();
 		
 		$nombre=$fila["titulo"];
-		$texto=$fila["texto"];
-		$fecha=$fila["fecha"];
+		$texto=$fila["descripcion"];
 		$imagen=$fila["imagen"];
-		$bajada=$fila["bajadaTitulo"];
 	}
 	
 	mysqli_close($con);
@@ -48,7 +46,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 		
 	<div class="col-sm-8 col-sm-offset-2">
 		<div class="page-header">
-			<h2 class="text-center">Editar Noticia</h2>
+			<h2 class="text-center">Editar Servicio</h2>
 		</div>
 		<br class="hidden-xs">
 		<br class="hidden-xs">
@@ -65,12 +63,8 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 				maxlength="100" placeholder="nombre de producto" required>
 				<span id="spanInput" class="glyphicon form-control-feedback"></span>
 				<div id="mensajeError" class="alert alert-danger hidden">
-					<strong>Error: </strong> ya existe una noticia con este título
+					<strong>Error: </strong> ya existe un servicio con este título
 				</div>
-			</div>
-			<div class="form-group">
-				<label for="nombre" class="control-label">Bajada de título</label>
-				<textarea rows="3" name="bajada" id="bajada" class="form-control" placeholder="bajada de título" maxlength="200" style="width:100% !important" required ><?php echo $bajada; ?></textarea>
 			</div>
 			<div class="form-group">
 				<label for="nombre" class="control-label">Texto</label>
@@ -88,7 +82,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 			<br />
 			<br />
 			<div class="modal-footer">
-				<a href="/admin/noticias" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i>&nbsp;Cancelar</a>
+				<a href="/admin/servicios" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i>&nbsp;Cancelar</a>
 				<button class="btn btn-primary btn-lg" id="botonAgregar"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i>&nbsp;Guardar</button>
 			</div>
 		</form>

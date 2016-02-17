@@ -13,8 +13,6 @@
 	$ID = $_POST["ID"];
 	$nombre = $_POST["nombre"];
 
-	$bajada = $_POST["bajada"];
-
 	$texto = $_POST['txtEditorContent'];
 
 	//Se hace la conexion:
@@ -23,13 +21,13 @@
 	if($_FILES["imagen"]["name"]!="")
 	{
 		//Se elimina la imagen actual:
-		$sql="SELECT * FROM noticias WHERE ID='$ID'";
+		$sql="SELECT * FROM servicios WHERE ID='$ID'";
 
 		$result = mysqli_query($con,$sql);
 		
 		if($result===false || $result->num_rows===0)
 		{
-			header("location:/admin/noticias");
+			header("location:/admin/servicios");
 		}
 		
 		for ($i = 0; $i <$result->num_rows; $i++) {
@@ -53,14 +51,14 @@
   		$file_tmp  = $_FILES['imagen']['tmp_name'];
   		move_uploaded_file($file_tmp, SITE_ROOT. $path .$subida);
 		$ruta="imagenes/" .$subida;
-		$resultado = $con->query("UPDATE noticias SET titulo='$nombre', bajadaTitulo='$bajada', texto='$texto', imagen='$ruta' WHERE ID='$ID'");
+		$resultado = $con->query("UPDATE servicios SET titulo='$nombre', descripcion='$texto', imagen='$ruta' WHERE ID='$ID'");
 
 	}
 	else{
-		$resultado = $con->query("UPDATE noticias SET titulo='$nombre', bajadaTitulo='$bajada', texto='$texto' WHERE ID='$ID'");
+		$resultado = $con->query("UPDATE servicios SET titulo='$nombre', descripcion='$texto' WHERE ID='$ID'");
 
 	}
 	
 	//redireccionar a programas
-	header("location:/admin/noticias");
+	header("location:/admin/servicios");
 ?>

@@ -35,7 +35,10 @@
 						<textarea id="txtEditor"></textarea>
 						<textarea id="txtEditorContent" name="txtEditorContent" hidden=""></textarea>
 					</div>
-					
+					<div class="form-group">
+						<label for="nombre" class="control-label">Imagen</label>
+						<input type="file" class="filestyle" data-input="false" data-buttonText="Seleccionar imagen..." name="imagen" id="imagen">
+					</div>
 					<br />
 					<br />
 					<div class="modal-footer">

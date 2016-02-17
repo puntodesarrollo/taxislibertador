@@ -19,6 +19,7 @@
 				<tr>
 					<th>Título</th>
 					<th>Descripcion</th>
+					<th class="col-sm-2">Imagen</th>
 					<th>Editar</th>
 					<th>Eliminar</th>
 				</tr>
@@ -40,6 +41,7 @@
 						echo '<tr>
 								<td>'. $fila["titulo"] .'</td>
 								<td>'. $fila["descripcion"] .'</td>
+								<td><img class="img-rounded" alt="sin imagen" src="'. $fila["imagen"] .'" width="100%"></td>
 								<td><a href="editar.php?t='.$ID.'"><span class="glyphicon glyphicon-edit text-primary"></span></a></td>
 								<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$ID.'\')">
 										<span class="glyphicon glyphicon-remove-circle text-danger"></span>
@@ -60,7 +62,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title text-center" id="myModalLabel">¿Eliminar Noticia?</h4>
+					<h4 class="modal-title text-center" id="myModalLabel">¿Eliminar Servicio?</h4>
 				</div>
 				<div class="modal-body">
 					<h5 class="text-center" id="text-modal"></h5>
@@ -75,12 +77,12 @@
 
 	<script type="text/javascript">
 	function funcionDelete(name) {
-		$("#myModalLabel").html("¿Eliminar Noticia?");
+		$("#myModalLabel").html("Eliminar Servicio");
 		$("#text-modal").html("");
 		var cadena = "eliminar.php?t=name";
 		cadena = cadena.replace("name",name);
 		$("#btn_delete").attr("href", cadena);
-		$("#text-modal").append("¿Está seguro de que desea eliminar la noticia?");
+		$("#text-modal").append("¿Está seguro de que desea eliminar el servicio?");
 	}
 	</script>
 

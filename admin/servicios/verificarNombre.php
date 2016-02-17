@@ -11,7 +11,7 @@
 	
 	include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";					
 	
-	$sql="SELECT titulo FROM noticias WHERE titulo='$nombre'";
+	$sql="SELECT titulo FROM servicios WHERE titulo='$nombre'";
 	
 	$result = mysqli_query($con,$sql);
 		

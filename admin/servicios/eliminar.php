@@ -13,13 +13,13 @@
 		
 		include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
 		
-		$sql="SELECT * FROM noticias WHERE ID='$ID'";
+		$sql="SELECT * FROM servicios WHERE ID='$ID'";
 
 		$result = mysqli_query($con,$sql);
 		
 		if($result===false || $result->num_rows===0)
 		{
-			header("location:/admin/noticias");
+			header("location:/admin/servicios");
 		}
 		
 		for ($i = 0; $i <$result->num_rows; $i++) {
@@ -30,11 +30,11 @@
 		}
 
 
-		$sql="DELETE FROM noticias WHERE ID='".$ID."'";
+		$sql="DELETE FROM servicios WHERE ID='".$ID."'";
 		$result = mysqli_query($con,$sql);
 		
 		mysqli_close($con);
 		//redireccionar a productos
-		header("location:/admin/noticias");
+		header("location:/admin/servicios");
 	}
 ?>
