@@ -1,6 +1,6 @@
 <?php
 	//Se hace la conexion:
-	$con = new mysqli("localhost", "cta23071", "cpPPaSQp", "cco21607_taxis");
+	$con = new mysqli("localhost", "cta23071", "cpPPaSQp", "cta23071_taxis");
 	//Se avisa si falla la conexion:
 	if ($con->connect_errno) {
 		echo "Falló la conexión con MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
