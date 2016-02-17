@@ -30,7 +30,7 @@
 					//Se hace la conexion:
 					include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
 					
-					$sql="SELECT * FROM slider ORDER BY imagen DESC";
+					$sql="SELECT * FROM fotos_slider ORDER BY ruta_foto DESC";
 					
 					$result = mysqli_query($con,$sql);
 					
@@ -39,9 +39,9 @@
 						$fila = $result->fetch_assoc();						
 						
 						echo '<tr>
-							<td>'.$fila["imagen"].'</td>
-							<td class="col-sm-2"><img src="/admin/slider/'.$fila["imagen"].'" alt="error de imagen" width="60%" class="img-rounded img-responsive"></td>
-							<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$fila["imagen"].'\')">
+							<td>'.$fila["ruta_foto"].'</td>
+							<td class="col-sm-2"><img src="/admin/slider/'.$fila["ruta_foto"].'" alt="error de imagen" width="60%" class="img-rounded img-responsive"></td>
+							<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$fila["ruta_foto"].'\')">
 									<span class="glyphicon glyphicon-remove-circle text-danger"></span>
 								</a></td>
 						</tr>';

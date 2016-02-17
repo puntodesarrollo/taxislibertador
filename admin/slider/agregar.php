@@ -25,8 +25,8 @@
 						<div class="col-sm-12">
 							<div id="divNombre" class="form-group">
 								<label for="nombre" class="control-label">Imagen</label>
-								<input type="file" class="form-control filestyle" data-input="false" data-buttonText="Seleccionar imagen..." name="imagen" id="imagen" 
-								maxlength="200" placeholder="archivo de imagen" required>
+								<input type="file" class="form-control filestyle" data-input="false" data-buttonText="Seleccionar imagen..." name="imagen[]" id="imagen" 
+								maxlength="200" placeholder="archivo de imagen" multiple="multiple" required>
 								<span id="spanInput" class="glyphicon form-control-feedback"></span>
 								<div id="mensajeError" class="alert alert-danger hidden">
 									<strong>Error: </strong> ¡ya existe una imagen con el mismo nombre!

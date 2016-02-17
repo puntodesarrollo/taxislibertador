@@ -10,48 +10,48 @@
 
 	include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 ?>
+
 	<br>
 	<br>
     <div class="page-header">
-        <h2 class="text-center">Categorías de Productos</h2>
+        <h2 class="text-center">Imágenes de la galeria</h2>
     </div>
 	<div class="table-responsive">
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th>Nombre</th>
-						<th>Editar</th>
+						<th>Ruta</th>
+						<th>Imagen</th>
 						<th>Eliminar</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
+					//Se hace la conexion:
 					include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
-
-					$sql="SELECT * FROM categorias";
-		
+					
+					$sql="SELECT * FROM fotos_galeria ORDER BY ruta_foto DESC";
+					
 					$result = mysqli_query($con,$sql);
 					
-					for ($i = 0; $i <$result->num_rows; $i++) 
-					{
+					for ($i = 0; $i <$result->num_rows; $i++) {
 						$result->data_seek($i);
-						$fila = $result->fetch_assoc();
-						$ID = $fila["ID"];
-						$Nombre = $fila["nombre"];
-
+						$fila = $result->fetch_assoc();						
+						
 						echo '<tr>
-								<td>'. $fila["nombre"] .'</td>
-								<td><a href="editar.php?t='.$Nombre.'"><span class="glyphicon glyphicon-edit text-primary"></span></a></td>
-								<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$Nombre.'\')">
-										<span class="glyphicon glyphicon-remove-circle text-danger"></span>
-									</a></td>
-							</tr>';
+							<td>'.$fila["ruta_foto"].'</td>
+							<td class="col-sm-2"><img src="/admin/galeria/'.$fila["ruta_foto"].'" alt="error de imagen" width="60%" class="img-rounded img-responsive"></td>
+							<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$fila["ruta_foto"].'\')">
+									<span class="glyphicon glyphicon-remove-circle text-danger"></span>
+								</a></td>
+						</tr>';
 					}
-				?>		
+					mysqli_close($con);
+					?>
 				</tbody>
 			</table>
 			<div class="modal-footer">
-				<a href="agregar.php" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus text-primary"></span>&nbsp;Nueva Categoría</a>
+				<a href="agregar.php" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-plus text-primary"></span>&nbsp;Nueva Imagen</a>
 			</div>
 		</div>
 
@@ -62,7 +62,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title text-center" id="myModalLabel">¿Eliminar Categoría?</h4>
+					<h4 class="modal-title text-center" id="myModalLabel">¿Eliminar Imagen?</h4>
 				</div>
 				<div class="modal-body">
 					<h5 class="text-center" id="text-modal"></h5>
@@ -74,8 +74,6 @@
 			</div>
 		</div>
 	</div>
-	
-</div><!--body-->
 
 <!-- Para el modal -->
 <script type="text/javascript">
@@ -84,11 +82,11 @@
 		var cadena = "eliminar.php?t=name";
 		cadena = cadena.replace("name",name);
 		$("#btn_delete").attr("href", cadena);
-		$("#text-modal").append("¿Está seguro de que desea eliminar la categoría <strong>" + name + "</strong>?");
+		$("#text-modal").append("¿Está seguro de que desea eliminar la imagen <strong>" + name + "</strong>?");
 	}
 </script>
 
+
 <?php
-	mysqli_close($con);
 	include $_SERVER['DOCUMENT_ROOT']."/admin/footer.php";
 ?>

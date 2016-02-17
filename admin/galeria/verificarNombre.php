@@ -6,14 +6,14 @@
 	$nombre=str_replace(" ","_",$nombre);
 	$nombre=str_replace("/","_",$nombre);
 
-	$path="imgSlider/";
+	$path="imgGaleria/";
 
 	$nombre = $path . $nombre;
 
 	//Se hace la conexion:
 	include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";				
 	
-	$sql="SELECT ruta_foto FROM fotos_slider WHERE ruta_foto='$nombre'";
+	$sql="SELECT ruta_foto FROM fotos_galeria WHERE ruta_foto='$nombre'";
 	
 	$result = mysqli_query($con,$sql);
 		

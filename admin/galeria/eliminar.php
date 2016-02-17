@@ -18,13 +18,13 @@ if($_GET["t"]!=null){
 	//Se hace la conexion:
 	include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
 	
-	$sql="DELETE FROM fotos_slider WHERE ruta_foto='".$nombre."'";
+	$sql="DELETE FROM fotos_galeria WHERE ruta_foto='".$nombre."'";
 	$result = mysqli_query($con,$sql);
 
 	unlink($nombre);
 	
 	mysqli_close($con);
 	//redireccionar a productos
-	header("location:/admin/slider");
+	header("location:/admin/galeria");
 }
 ?>
