@@ -39,6 +39,8 @@
 		$Termino = new DateTime($Termino[2] . '-' . $Termino[1] .'-' . $Termino[0] . ' 00:00:00');
 		$Termino = $Termino->format('Y-m-d H:i:s');
 	}
+
+	$INICIO = explode("-", $Inicio[0]);
 	
 	include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 ?>
@@ -67,7 +69,8 @@
                type="text" required>
 		</div>
 		<div class="col-sm-3">
-			<button id="buscar" class="btn btn-default ">Enviar</button>
+			<br>
+			<button id="buscar" class="btn btn-default btn-block">Enviar</button>
 		</div>
 	</div>
 	<div class="clearfix"></div>
