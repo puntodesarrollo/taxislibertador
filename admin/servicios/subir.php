@@ -26,8 +26,7 @@
 	
 	$resultado = $con->query("INSERT INTO servicios (titulo,descripcion) VALUES('$nombre','$texto')");
 
-	}
-
+	
 	mysqli_close($con);
 
 	//redireccionar a programas

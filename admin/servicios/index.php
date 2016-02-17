@@ -12,14 +12,13 @@
 ?>
 	<br>
 	<br>
-    <h1 class="text-center">Noticias</h1>
+    <h1 class="text-center">Servicios</h1>
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<thead>
 				<tr>
 					<th>Título</th>
-					<th>Fecha</th>
-					<th class="col-sm-2">Imagen</th>
+					<th>Descripcion</th>
 					<th>Editar</th>
 					<th>Eliminar</th>
 				</tr>
@@ -28,7 +27,7 @@
 				<?php
 					include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
 
-					$sql="SELECT * FROM noticias";
+					$sql="SELECT * FROM servicios";
 		
 					$result = mysqli_query($con,$sql);
 					
@@ -40,8 +39,7 @@
 
 						echo '<tr>
 								<td>'. $fila["titulo"] .'</td>
-								<td>'. $fila["fecha"] .'</td>
-								<td><img class="img-rounded" alt="sin imagen" src="'. $fila["imagen"] .'" width="100%"></td>
+								<td>'. $fila["descripcion"] .'</td>
 								<td><a href="editar.php?t='.$ID.'"><span class="glyphicon glyphicon-edit text-primary"></span></a></td>
 								<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$ID.'\')">
 										<span class="glyphicon glyphicon-remove-circle text-danger"></span>
