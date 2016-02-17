@@ -12,14 +12,14 @@
 ?>
 	<br>
     <div class="page-header">
-        <h2 class="text-center">Administrador <small>Colaciones Andrea</small></h2>
+        <h2 class="text-center">Administrador <small>Taxis Libertador</small></h2>
     </div>
 	<div class="col-sm-6">
 		<div id="panel1">
 			<div id="panel1Arriba"></div>									
-			<img src="colacion.jpg" alt="Imagen Productos" width="200px" height="200px" class="center-block img-circle">
+			<img src="reservas.png" alt="Reservas de Productos" width="200px" height="200px" class="center-block img-circle">
 			<div id="panel1Abajo"></div>
-			<h4 class="text-center">PRODUCTOS</h4>
+			<h4 class="text-center">Reservas de Servicios</h4>
 		</div> 
 		<div class="text-center">
 			<br>
@@ -30,9 +30,9 @@
 	<div class="col-sm-6">
 		<div id="panel1">
 			<div id="panel1Arriba"></div>									
-			<img src="noticias.png" alt="Imagen Noticias" width="200px" height="200px" class="center-block img-circle">
+			<img src="imagen.png" alt="Imagenes de Flota" width="200px" height="200px" class="center-block img-circle">
 			<div id="panel1Abajo"></div>
-			<h4 class="text-center">NOTICIAS</h4>
+			<h4 class="text-center">Imágenes de Flota</h4>
 		</div> 
 		<div class="text-center">
 			<br>

@@ -44,16 +44,13 @@ $sesion = include $_SERVER['DOCUMENT_ROOT']."/admin/verificarSesion.php";
 		<!-- Collection of nav links and other content for toggling -->
 		<div id="navbarCollapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-			<li><a href="/admin/productos">Productos</a></li>
-			<li><a href="/admin/categorias">Categorías</a></li>
-			<li><a href="/admin/creatuplato">Crea Tu Plato</a></li>
-			<li><a href="/admin/pedidos">Pedidos</a></li>	
-			<li><a href="/admin/ventas">Registro de ventas</a></li>
-			<li><a href="/admin/noticias">Noticias</a></li>
+			<li><a href="/admin/reservas">Reservas</a></li>
+			<li><a href="/admin/galeria">Galeria</a></li>
 			<li><a href="/admin/slider">Slider</a></li>
+			<li><a href="/admin/servicios">Servicios Empresa</a></li>
+			<li><a href="/admin/slider">Quienes Somos/Historia Empresa</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="/admin/usuariosSistema">Usuarios Registrados</a></li>
 			<li class="dropdown">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">Mi Cuenta<b class="caret"></b></a>
 					<ul role="menu" class="dropdown-menu">
