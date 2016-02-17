@@ -13,7 +13,7 @@
 
 	<br>
 	<div class="page-header">
-		<h2 class="text-center">Agregar Noticia</h2>
+		<h2 class="text-center">Agregar Servicio</h2>
 	</div>
 	<br class="hidden-xs">
 	<br class="hidden-xs">
@@ -24,25 +24,18 @@
 					<div id="divNombre" class="form-group">
 						<label for="nombre" class="control-label">Título</label>
 						<input type="text" class="form-control" name="nombre" id="nombre" 
-						maxlength="100" placeholder="Título de noticia" required>
+						maxlength="100" placeholder="Título del Servicio" required>
 						<span id="spanInput" class="glyphicon form-control-feedback"></span>
 						<div id="mensajeError" class="alert alert-danger hidden">
-							<strong>Error: </strong> ya existe una noticia con este título
+							<strong>Error: </strong> ya existe un servicio con este título
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="nombre" class="control-label">Bajada de título</label>
-						<textarea rows="3" name="bajada" id="bajada" class="form-control" placeholder="bajada de título" maxlength="200" style="width:100% !important" required ></textarea>
-					</div>
-					<div class="form-group">
-						<label for="nombre" class="control-label">Texto</label>
+						<label for="nombre" class="control-label">Descripcion</label>
 						<textarea id="txtEditor"></textarea>
 						<textarea id="txtEditorContent" name="txtEditorContent" hidden=""></textarea>
 					</div>
-					<div class="form-group">
-						<label for="nombre" class="control-label">Imagen</label>
-						<input type="file" class="filestyle" data-input="false" data-buttonText="Seleccionar imagen..." name="imagen" id="imagen">
-					</div>
+					
 					<br />
 					<br />
 					<div class="modal-footer">
