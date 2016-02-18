@@ -23,14 +23,22 @@
             }
             mysqli_close($conexion2);    
             echo '
-            <div class="row">
-                <div class="col-lg-6 text-center">
-                    <h2 class="section-heading">Quiénes Somos</h2>
-                    <h3 class="section-subheading text-muted">'.$texto1.'</h3>
+            <div class="row text-center" style="text-align: justify; text-justify: inter-word !important">
+                <div class="col-md-6">
+                    <h3 class="section-heading text-center">Quiénes Somos</h3>
+                    <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                    <br>'.$texto1.'
+                    </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <h2 class="section-heading">Nuestra Historia</h2>
-                    <h3 class="section-subheading text-muted">'.$texto2.'</h3>
+                <div class="col-md-6">
+                    <h3 class="section-heading text-center">Nuestra Historia</h3>
+                    <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <br>'.$texto2.'
+                    </div>
+                    </div>
                 </div>
             </div>
             <div class="row">

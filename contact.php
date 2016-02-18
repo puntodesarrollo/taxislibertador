@@ -3,14 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contactenos</h2>
-                    <h3 class="section-subheading text-muted">Envienos sus dudas o consultas y se las responderemos a la brevedad!</h3>
+                    <h2 class="section-heading">Contáctanos</h2>
+                    <h3 class="section-subheading text-muted">¡Envíanos tus dudas o consultas y te las responderemos a la brevedad!</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="alert alert-success hidden" id="form-message">
-                        <strong>¡Mensaje Enviado correctamente!</strong> Gracias por contactarnos!
+                        <strong>¡Mensaje Enviado correctamente!</strong> ¡Gracias por contactarnos!
                     </div>
                     <div id="form-message"></div>
                     <form name="sentMessage" id="contactForm" novalidate>

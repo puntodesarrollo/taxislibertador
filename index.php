@@ -78,7 +78,7 @@
                         <a class="page-scroll" href="#services">Servicios</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contactanos</a>
+                        <a class="page-scroll" href="#contact">Contáctanos</a>
                     </li>
                 </ul>
             </div>
