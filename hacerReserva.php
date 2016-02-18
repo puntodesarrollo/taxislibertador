@@ -57,14 +57,14 @@
 	$tema = "Contacto desde taxislibertador.cl";
 
 	//$to = 'contacto@taxislibertador.cl';
-	$to = 'gpuellestorres@gmail.com';
+	$to = include $_SERVER['DOCUMENT_ROOT']."/admin/obtenerCorreoAdmin.php";
 	$email_subject = $tema;
 	$email_body = "Ha recibido una nueva reserva desde la página web taxislibertador.cl\n\n".
 				  " Detalles:\n \nNombre Contacto: ".$solicitante ."\n ".
 				  "Fecha: ".$fecha ."\n ".
 				  "Hora: ".$hora ."\n ".
 				  "Dirección del servicio: ".$direccion ."\n ".
-				  "Telefono: ".$fono ."\n ".
+				  "Telefono: ".$telefono ."\n ".
 				  "Correo electrónico: ".$correo.
 				  "\n\n Comentario sobre el servicio: \n ".$comentario;
 	$headers = $correo;
@@ -72,23 +72,20 @@
 	mail($to,$email_subject,$email_body,$headers);
 
 	$tema = "Reserva de servicios en taxislibertador.cl";
-
-	//$to = 'contacto@taxislibertador.cl';
-	$to = $correo;
 	$email_subject = $tema;
 	$email_body = "Hemos recibido una nueva reserva a su nombre en la página web taxislibertador.cl\n\n".
 				  " Detalles:\n \nNombre Contacto: ".$solicitante ."\n ".
 				  "Fecha: ".$fecha ."\n ".
 				  "Hora: ".$hora ."\n ".
 				  "Dirección del servicio: ".$direccion ."\n ".
-				  "Telefono: ".$fono ."\n ".
+				  "Telefono: ".$telefono ."\n ".
 				  "Correo electrónico: ".$correo.
 				  "\n\n Comentario sobre el servicio: \n ".$comentario.
 				  "\n\n\nPronto confirmaremos la reserva con usted.".
-				  "\n\nAtentamente,\nTaxis El Libertador.".;
+				  "\n\nAtentamente,\nTaxis El Libertador.";
 	$headers = $correo;
 
-	mail($to,$email_subject,$email_body,$headers);
+	mail($correo,$email_subject,$email_body,$headers);
 
 	echo "true";
 ?>
