@@ -69,7 +69,7 @@
                         <a class="page-scroll" href="#reserva">Reserva</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Quienes Somos</a>
+                        <a class="page-scroll" href="#about">Quiénes Somos</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Nuestra Flota</a>
@@ -97,12 +97,11 @@
 
     <footer>
         <div class="container">
+            <div class="clearfix"></div>
             <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">&copy; <a target="_blank" href="http://puntodesarrollo.com">puntodesarrollo ltda</a> - 2016</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
+                <div class="col-md-6">
+                    <img src="logo.png" class="img-rounded" height="100px">
+                    <ul class="list-inline social-buttons hidden">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a>
@@ -111,8 +110,13 @@
                         </li>
                     </ul>
                 </div>
+                <div class="col-md-6">
+                    <br class="xs-hidden">
+                    <br class="xs-hidden">
+                    <span class="copyright">&copy; <a target="_blank" href="http://puntodesarrollo.com">puntodesarrollo ltda</a> - 2016</span>
+                </div>
                 <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
+                    <ul class="list-inline quicklinks hidden">
                         <li><a href="#">Privacy Policy</a>
                         </li>
                         <li><a href="#">Terms of Use</a>

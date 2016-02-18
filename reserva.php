@@ -6,7 +6,7 @@
 
 
 <!-- About Section -->
-    <section id="reserva" style="max-height:700px !important">
+    <section id="reserva">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center" style="border-right:1px solid #e0e0eb !important">
@@ -84,8 +84,8 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
     </section>
-
     <script>
 
     function enviarReserva(evt)

@@ -55,9 +55,6 @@
 	mysqli_close($con);
 
 	$tema = "Contacto desde taxislibertador.cl";
-	
-
-	$fechaActual=date('Y-m-d');
 
 	//$to = 'contacto@taxislibertador.cl';
 	$to = 'gpuellestorres@gmail.com';
@@ -70,9 +67,26 @@
 				  "Telefono: ".$fono ."\n ".
 				  "Correo electrónico: ".$correo.
 				  "\n\n Comentario sobre el servicio: \n ".$comentario;
-	$headers = $correo;	
-	
-	include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
+	$headers = $correo;
+
+	mail($to,$email_subject,$email_body,$headers);
+
+	$tema = "Reserva de servicios en taxislibertador.cl";
+
+	//$to = 'contacto@taxislibertador.cl';
+	$to = $correo;
+	$email_subject = $tema;
+	$email_body = "Hemos recibido una nueva reserva a su nombre en la página web taxislibertador.cl\n\n".
+				  " Detalles:\n \nNombre Contacto: ".$solicitante ."\n ".
+				  "Fecha: ".$fecha ."\n ".
+				  "Hora: ".$hora ."\n ".
+				  "Dirección del servicio: ".$direccion ."\n ".
+				  "Telefono: ".$fono ."\n ".
+				  "Correo electrónico: ".$correo.
+				  "\n\n Comentario sobre el servicio: \n ".$comentario.
+				  "\n\n\nPronto confirmaremos la reserva con usted.".
+				  "\n\nAtentamente,\nTaxis El Libertador.".;
+	$headers = $correo;
 
 	mail($to,$email_subject,$email_body,$headers);
 
