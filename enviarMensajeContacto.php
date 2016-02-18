@@ -9,7 +9,7 @@
 
 	$fechaActual=date('Y-m-d');
 	//$to='contacto@taxislibertador.cl';
-	$to = 'lpastenpinto@gmail.com';
+	$to = include $_SERVER['DOCUMENT_ROOT']."/admin/obtenerCorreoAdmin.php";
 	$email_subject = $tema;
 	$email_body = "Ha recibido un nuevo mensaje desde la página web taxislibertador.cl\n\n".
 				  " Detalles:\n \nNombre Contacto: ".$name ."\n ".
