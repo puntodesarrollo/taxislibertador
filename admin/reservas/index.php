@@ -135,7 +135,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title text-center" id="myModalLabel">¿Eliminar Noticia?</h4>
+					<h4 class="modal-title text-center" id="myModalLabel">¿Eliminar Reserva?</h4>
 				</div>
 				<div class="modal-body">
 					<h5 class="text-center" id="text-modal"></h5>
@@ -175,12 +175,12 @@
 
 	<script type="text/javascript">
 	function funcionDelete(name) {
-		$("#myModalLabel").html("¿Eliminar Noticia?");
+		$("#myModalLabel").html("¿Eliminar Reserva?");
 		$("#text-modal").html("");
 		var cadena = "eliminar.php?t=name";
 		cadena = cadena.replace("name",name);
 		$("#btn_delete").attr("href", cadena);
-		$("#text-modal").append("¿Está seguro de que desea eliminar la noticia?");
+		$("#text-modal").append("¿Está seguro/a de que desea eliminar la reserva?");
 	}
 	</script>
 
