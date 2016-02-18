@@ -45,10 +45,11 @@ $sesion = include $_SERVER['DOCUMENT_ROOT']."/admin/verificarSesion.php";
 		<div id="navbarCollapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 			<li><a href="/admin/reservas">Reservas</a></li>
-			<li><a href="/admin/galeria">Galeria</a></li>
-			<li><a href="/admin/slider">Slider</a></li>
+			<li><a href="/admin/galeria">Galeria</a></li>			
 			<li><a href="/admin/servicios">Servicios Empresa</a></li>
 			<li><a href="/admin/about.php">Quienes Somos/Historia Empresa</a></li>
+			<li><a href="/admin/contacto">Mensajes</a></li>
+			<li><a href="/admin/correo.php">Correo</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">

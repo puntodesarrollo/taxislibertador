@@ -23,8 +23,8 @@
 		</div> 
 		<div class="text-center">
 			<br>
-			<a href="/admin/productos" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Ver Todos</a>
-			<a href="/admin/productos/agregar.php" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar Nuevo</a>
+			<a href="/admin/servicios" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Ver Todos</a>
+			<a href="/admin/servicios/agregar.php" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar Nuevo</a>
 		</div>
 	</div>
 	<div class="col-sm-6">
@@ -36,8 +36,8 @@
 		</div> 
 		<div class="text-center">
 			<br>
-			<a href="/admin/noticias" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Ver Todos</a>
-			<a href="/admin/productos/agregar.php" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar Nuevo</a>
+			<a href="/admin/galeria" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Ver Todos</a>
+			<a href="/admin/galeria/agregar.php" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar Nuevo</a>
 		</div>
 	</div>
 	

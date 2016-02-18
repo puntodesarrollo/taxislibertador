@@ -14,8 +14,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Galeria</h2>
-                    <h3 class="section-subheading text-muted">Nuestra Flota</h3>
+                    <h2 class="section-heading">Nuestra Flota</h2>
+                    <h3 class="section-subheading text-muted">Galeria de nuestros automoviles</h3>
                 </div>
             </div>
             <div class="row">
