@@ -46,6 +46,14 @@
 	{
 		$horasNum[0]="00";
 	}
+	if($horas[1]=="pm")
+	{
+		$horasNum[0]="" + (((int)$horasNum[0])+12) + "";
+	}
+	if($horasNum[0]=="24")
+	{
+		$horasNum[0]="12";
+	}
 
 	$d1=new DateTime($fechas[2] . '-' . $fechas[1] .'-' . $fechas[0] . ' ' . $horasNum[0].':'.$horasNum[1].':00');
 
