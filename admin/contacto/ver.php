@@ -46,7 +46,7 @@
 		<div class="rows">
 		<div class="col-xs-12 col-sm-10 col-sm-offset-2">
 			<label class="control-label">Fecha</label>
-			<p><?php echo $fecha; ?></p>
+			<p><?php echo transformarFecha($fecha); ?></p>
 			<label class="control-label">Nombre Contacto</label>
 			<p><?php echo $nombre_contacto; ?></p>			
 			<label class="control-label">Telefono Contacto</label>
@@ -63,4 +63,9 @@
 <?php
 	mysqli_close($con);
 	include $_SERVER['DOCUMENT_ROOT']."/admin/footer.php";
+	function transformarFecha($fechaOriginal){
+		list($anio, $mes, $dia) = split('-', $fechaOriginal);
+		$fechaLista=$dia.'-'.$mes.'-'.$anio;
+		return $fechaLista;
+	}
 ?>

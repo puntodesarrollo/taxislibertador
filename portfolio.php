@@ -1,97 +1,49 @@
 <!-- Portfolio Grid Section -->
+<?php 
+    $conexionPortafolio=include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
+    $sql="SELECT * FROM fotos_galeria ORDER BY ruta_foto DESC";                
+    $result = mysqli_query($conexionPortafolio,$sql);
+
+    for ($i = 0; $i <$result->num_rows; $i++) {
+        $result->data_seek($i);
+        $fila = $result->fetch_assoc();                     
+                                                
+    }
+?>
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Galeria</h2>
+                    <h3 class="section-subheading text-muted">Nuestro Automoviles</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
+                <?php 
+                    for ($i = 0; $i <$result->num_rows; $i++) {
+                        $result->data_seek($i);
+                        $fila = $result->fetch_assoc();                     
+                        $cont=$i+1;    
+                        echo '<div class="col-md-4 col-sm-6 portfolio-item">';
+                            echo '<a href="#portfolioModal'.$cont.'" class="portfolio-link" data-toggle="modal">';
+                                echo '<div class="portfolio-hover">';
+                                    echo '<div class="portfolio-hover-content">';
+                                        echo '<i class="fa fa-plus fa-3x"></i>';
+                                    echo '</div>';
+                                echo '</div>';
+                                echo '<img src="/admin/galeria/'.$fila["ruta_foto"].'" class="img-responsive" alt="" style="height: 230px;"">';
+                            echo '</a>';
+                            echo '<div class="portfolio-caption hidden">';
+                                echo '<h4>Round Icons</h4>';
+                                echo '<p class="text-muted">Graphic Design</p>';
+                            echo '</div>';
+                        echo '</div>';                                            
+                    }
+                ?>                                                                          
             </div>
         </div>
     </section>
+
+<?php
+    mysqli_close($conexionPortafolio);
+?>    

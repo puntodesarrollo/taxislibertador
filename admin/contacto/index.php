@@ -13,11 +13,20 @@
 	$fInicioValue="";
 	$fTerminoValue="";
 	if($_GET["inicio"]!=null && $_GET["termino"]!=null){
-
-		list($mes1, $dia1, $anio1) = split('-', $_GET["inicio"]);
-		list($mes2, $dia2, $anio2) = split('-', $_GET["termino"]);
-		$fInicioValue=$dia1.'-'$mes1											
+		
+		$fInicio=$_GET["inicio"];
+		$fTermino=$_GET["termino"];										
+														
+	}else{
+		$fTermino = date('Y-m-d');
+		$fInicio = strtotime ('-7 day' , strtotime ( $fTermino ) ) ;
+		$fInicio = date ( 'Y-m-d' , $fInicio );
 	}
+
+	
+	$fInicioValue=transformarFecha($fInicio);
+	$fTerminoValue=transformarFecha($fTermino);
+	$sql="SELECT * FROM contacto WHERE fecha>='$fInicio' AND fecha<='$fTermino'";
 
 ?>
 	<br>
@@ -25,7 +34,6 @@
     <div class="page-header">
         <h2 class="text-center">Mensajes</h2>
     </div>
-
     <div class="col-md-11">    
     	<div class="col-md-2">
         	<h4><small>Filtro de fechas:</small></h4>
@@ -62,16 +70,6 @@
 				<tbody>
 					<?php
 					include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
-
-					if($_GET["inicio"]!=null && $_GET["termino"]!=null){
-						$fInicio=$_GET["inicio"];
-						$fTermino=$_GET["termino"];										
-						$sql="SELECT * FROM contacto WHERE fecha>='$fInicio' AND fecha<='$fTermino'";
-						//$sql="SELECT * FROM contacto WHERE fecha>=$fInicio AND fecha<=$fTermino";								
-					}else{
-						$sql="SELECT * FROM contacto";			
-					}	
-										
 					
 					$result = mysqli_query($con,$sql);
 					
@@ -86,7 +84,7 @@
 						$telefono_contacto = $fila["telefono_contacto"];						
 
 						echo '<tr>
-								<td>'. $fecha .'</td>
+								<td>'. transformarFecha($fecha) .'</td>
 								<td>'. $nombre_contacto .'</td>
 								<td>'. $mail_contacto .'</td>
 								<td>'. $telefono_contacto .'</td>
@@ -137,4 +135,9 @@
 <?php
 	mysqli_close($con);
 	include $_SERVER['DOCUMENT_ROOT']."/admin/footer.php";
+	function transformarFecha($fechaOriginal){
+		list($anio, $mes, $dia) = split('-', $fechaOriginal);
+		$fechaLista=$dia.'-'.$mes.'-'.$anio;
+		return $fechaLista;
+	}
 ?>

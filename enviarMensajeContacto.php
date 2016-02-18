@@ -22,8 +22,8 @@
 	mysqli_close($con);
 	
 
-
-	mail($to,$email_subject,$email_body,$headers);
 	
-	header("location:/contacto.html");
+    mail($to,$email_subject,$email_body,$headers);   
+	return true;
+	//header("location:/contacto.html");
 ?>
