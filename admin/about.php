@@ -60,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 			<br />
 			<br />
 			<div class="modal-footer">
-				<a href="/admin/servicios" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i>&nbsp;Cancelar</a>
+				<a href="/admin" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i>&nbsp;Cancelar</a>
 				<button class="btn btn-primary btn-lg" id="botonAgregar"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i>&nbsp;Guardar</button>
 			</div>
 		</form>
@@ -86,6 +86,7 @@ $( document ).ready(function() {
 			console.log($('#txtEditor').Editor("getText"));
 
 			$('#txtEditorContent').text($('#txtEditor').Editor("getText"));
+			$('#txtEditorContent2').text($('#txtEditor2').Editor("getText"));
 		});
 
 		
