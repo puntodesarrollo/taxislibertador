@@ -24,16 +24,17 @@
             mysqli_close($conexion2);    
             echo '
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Quienes Somos</h2>
+                <div class="col-lg-6 text-center">
+                    <h2 class="section-heading">Quiénes Somos</h2>
                     <h3 class="section-subheading text-muted">'.$texto1.'</h3>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-6 text-center">
                     <h2 class="section-heading">Nuestra Historia</h2>
                     <h3 class="section-subheading text-muted">'.$texto2.'</h3>
                 </div>
+            </div>
+            <div class="row">
+                
             </div> ';
             ?>
         </div>

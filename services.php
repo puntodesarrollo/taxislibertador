@@ -18,14 +18,13 @@
             $fila = $result->fetch_assoc();
             
             echo '
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <img class="img-responsive img-hover img-rounded" src="/admin/servicios/'.$fila["imagen"].'">
-                    </span>
+            <div class="col-md-4 text-center">
+                
                     <h4 class="service-heading">'.$fila["titulo"].'</h4>
+                    <img class="img-responsive img-hover img-rounded" width="90%" src="/admin/servicios/'.$fila["imagen"].'">
+                    <br>
                     <p class="text-muted">'.$fila["descripcion"].'</p>
-                </div>
+                
                 
             </div> ';
             }
