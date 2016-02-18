@@ -20,7 +20,14 @@
                 <div class="col-md-6">
                     <br class="hidden-xs">
                     <h2 class="text-center">¡Haz tu reserva!</h2>
-                    <form class="form-horizontal" role="form" action="enviarSolicitud()">
+                        <div class = "alert alert-dismissable hidden" id="reservaAlert">
+                           <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                              &times;
+                           </button>
+                            
+                           Error ! Change few things.
+                        </div>
+                    <form class="form-horizontal" role="form" onsubmit="return enviarReserva()">
                         <div class="form-group">
                             <label for="nombre" class="control-label col-sm-4">Fecha</label>
                             <div class="col-sm-8">
@@ -81,9 +88,62 @@
 
     <script>
 
-    function enviarSolicitud()
+    function enviarReserva(evt)
     {
-        
+        fecha = $("#fecha").val();
+        hora = $("#hora").val();
+        solicitante = $("#solicitante").val();
+        direccion = $("#direccion").val();
+        comentario = $("#comentario").val();
+        telefono = $("#telefono").val();
+        correo = $("#correo").val();
+
+        console.log(fecha, hora, solicitante, direccion, telefono, correo, comentario);
+
+        var parametros = {
+                "fecha" : fecha,
+                "hora" : hora,
+                "solicitante" : solicitante,
+                "direccion" : direccion,
+                "comentario" : comentario,
+                "telefono" : telefono,
+                "correo" : correo
+        };
+        $.ajax({
+            data:  parametros,
+            url:   'hacerReserva.php',
+            type:  'post',
+            beforeSend: function () {
+                    $("#reservaAlert").html("Procesando, espere por favor...");
+                    $("#reservaAlert").addClass("alert-info");
+                    $("#reservaAlert").removeClass("hidden");
+            },
+            success:  function (response) {
+                    console.log(response);
+                    if(response=="true")
+                    {
+                        $("#reservaAlert").html("¡Su reserva se ha enviado con éxito! Pronto nos comunicaremos con usted.");
+                        $("#reservaAlert").addClass("alert-success");
+                        $("#reservaAlert").removeClass("hidden");
+                        $("#reservaAlert").removeClass("alert-info");
+
+                        $('html, body').animate({
+                            scrollTop: $("#reserva").offset().top
+                        }, 2000);
+
+                        $("#fecha").val("");
+                        $("#hora").val("");
+                        $("#solicitante").val("");
+                        $("#direccion").val("");
+                        $("#comentario").val("");
+                        $("#telefono").val("");
+                        $("#correo").val("");
+
+                    }
+            }
+        });
+
+        return false;
     }
 
     // A $( document ).ready() block.
@@ -98,6 +158,5 @@
                     viewMode: 'days',
                     format: 'h:mm a'
                 });
-
     });
     </script>
