@@ -8,7 +8,7 @@
 	
 
 	$fechaActual=date('Y-m-d');
-
+	//$to='contacto@taxislibertador.cl';
 	$to = 'lpastenpinto@gmail.com';
 	$email_subject = $tema;
 	$email_body = "Ha recibido un nuevo mensaje desde la página web taxislibertador.cl\n\n".

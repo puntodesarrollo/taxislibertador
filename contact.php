@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="alert alert-success hidden" id="form-message">
-                        <strong>Mensaje Enviado correctamente.!</strong> Gracias por contactarnos!
+                        <strong>¡Mensaje Enviado correctamente!</strong> Gracias por contactarnos!
                     </div>
                     <div id="form-message"></div>
                     <form name="sentMessage" id="contactForm" novalidate>

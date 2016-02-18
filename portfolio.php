@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Galeria</h2>
-                    <h3 class="section-subheading text-muted">Nuestro Automoviles</h3>
+                    <h3 class="section-subheading text-muted">Nuestra Flota</h3>
                 </div>
             </div>
             <div class="row">
@@ -31,7 +31,7 @@
                                         echo '<i class="fa fa-plus fa-3x"></i>';
                                     echo '</div>';
                                 echo '</div>';
-                                echo '<img src="/admin/galeria/'.$fila["ruta_foto"].'" class="img-responsive" alt="" style="height: 230px;"">';
+                                echo '<img src="/admin/galeria/'.$fila["ruta_foto"].'" class="img-responsive img-rounded" alt="" style="height: 230px;"">';
                             echo '</a>';
                             echo '<div class="portfolio-caption hidden">';
                                 echo '<h4>Round Icons</h4>';
