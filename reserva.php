@@ -12,7 +12,7 @@
                 <div class="col-md-6 text-center" style="border-right:1px solid #e0e0eb !important">
                     <br class="hidden-xs">
                     <h1 class="section-heading">Taxis El Libertador</h1>
-                    <h2 class="section-subheading text-muted">52 2511826 - 963030062</h2>
+                    <h2 class="section-subheading text-muted">52 2512816 - 963030062</h2>
                     <h3 class="section-subheading text-muted">contacto@taxislibertador.cl<br><br>18 de septiembre 5083, Estación Paipote, Región de Atacama</h3>
                     <br>
                     <img class="img-rounded img-responsive" src="img2.jpg" width="100%" alt="">
@@ -24,8 +24,6 @@
                            <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
                               &times;
                            </button>
-                            
-                           Error ! Change few things.
                         </div>
                     <form class="form-horizontal" role="form" onsubmit="return enviarReserva()">
                         <div class="form-group">
