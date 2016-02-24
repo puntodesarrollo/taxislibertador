@@ -21,8 +21,6 @@
 	$resultado = $con->query("INSERT INTO contacto (nombre_contacto,mail_contacto,mensaje_contacto,telefono_contacto,fecha) VALUES('$name','$email_address','$message','$fono','$fechaActual')");
 	mysqli_close($con);
 	
-
-	
     mail($to,$email_subject,$email_body,$headers);   
 	return true;
 	//header("location:/contacto.html");

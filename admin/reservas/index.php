@@ -85,7 +85,8 @@
 			<thead>
 				<tr>
 					<th>Fecha</th>
-					<th>Dirección</th>
+					<th>Origen</th>
+					<th>Destino</th>
 					<th>Solicitante</th>
 					<th>Confirmado</th>
 					<th>Ver Detalles</th>
@@ -112,6 +113,7 @@
 						echo '<tr>
 								<td>'. $fila["fecha"] .'</td>
 								<td>'. $fila["direccion"] .'</td>
+								<td>'. $fila["destino"] .'</td>
 								<td>'. $fila["solicitante"] .'</td>
 								<td>'. $fila["realizado"] .'</td>
 								<td><a href="detalles.php?t='.$ID.'"><span class="glyphicon glyphicon-search text-primary"></span></a></td>

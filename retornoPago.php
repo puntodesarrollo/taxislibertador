@@ -1,7 +1,28 @@
 <?php
 require  $_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php';
 
+//Mandar correo
+$name = "Sistema de pagos taxis libertador";
 
+$email_address = "gpuellestorres@gmail.com";
+$tema = "Pago desde taxislibertador.cl";
+
+
+$fechaActual=date('Y-m-d');
+//$to='contacto@taxislibertador.cl';
+$to = $email_address;
+$email_subject = $tema;
+$email_body = "Ha recibido un nuevo pago desde la página web taxislibertador.cl. Revise su correo electrónico\n\n".
+$headers = $email_address;  
+
+include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
+$resultado = $con->query("INSERT INTO contacto (nombre_contacto,mail_contacto,mensaje_contacto,telefono_contacto,fecha) VALUES('$name','$email_address','$message','$fono','$fechaActual')");
+mysqli_close($con);
+
+mail($to,$email_subject,$email_body,$headers);
+
+
+//Se obtiene el pago
 $receiver_id = 43182;
 $secret = '7b32f743f795ac77cd9e7b99c1ccece20d1921cb';
 
@@ -31,7 +52,7 @@ try {
 
                 //Se agregan los datos:
 
-                $sql = "UPDATE cobro SET pagado='Sí' WHERE idCobro='$idCobro'";
+                $sql = "UPDATE cobro SET pagado='SI' WHERE idCobro='$idCobro'";
 
                 $resultado = $con->query($sql);
 
