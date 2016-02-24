@@ -28,14 +28,14 @@
 
 			$realizado = $fila["realizado"];
 		}
-
-		if($realizado=="Sí")
-		{
-			$cambio="No";
-		}
-		if($realizado=="No")
+		
+		if($realizado=="NO")
 		{
 			$cambio="Sí";
+		}
+		else
+		{
+			$cambio="NO";
 		}
 
 		$sql="UPDATE reservas SET realizado='$cambio' WHERE ID='".$ID."'";

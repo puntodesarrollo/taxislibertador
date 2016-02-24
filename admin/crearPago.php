@@ -1,5 +1,12 @@
 <?php
 
+	$sesion = include $_SERVER['DOCUMENT_ROOT']."/admin/verificarSesion.php";
+
+	if($sesion===false){
+			header("location:/admin/login");
+			exit;
+		}
+
 	// Debemos conocer el $receiverId y el $secretKey de ante mano.
 	$receiverId = 43182;
 	$secretKey = '7b32f743f795ac77cd9e7b99c1ccece20d1921cb';
@@ -46,36 +53,32 @@
 		$idCobro = $respuesta->payment_id; 
 		$urlCobro = $respuesta->payment_url;
 
-		$sesion = include $_SERVER['DOCUMENT_ROOT']."/admin/verificarSesion.php";
+		ini_set('display_errors', 1);
+	    ini_set('display_startup_errors', 1);
+	    error_reporting(E_ALL);
 
-	if($sesion===false){
-		header("location:/admin/login");
+		//agregar los datos a la BD
+		include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
+
+		$fechas = explode("/", $fecha);
+		$horas = explode(" ", $hora);
+		//echo '<br>';
+		//echo $d1->format('Y-m-d H:i:s');
+		$mysqltime = date ("Y-m-d H:i:s", $d1->getTimestamp());
+
+		//Se agregan los datos:
+
+		$sql = "INSERT INTO cobro (usuario, correo, origen, destino, idCobro, idReserva, precio, urlCobro) VALUES('$usuario','$correo','$origen','$destino','$idCobro','$idCobro','$idReserva','$precio','$urlCobro')";
+
+		$resultado = $con->query($sql);
+
+		mysqli_close($con);
+
+		echo $sql;
 		exit;
-	}
 
-	ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-	//agregar los datos a la BD
-	include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
-
-	$fechas = explode("/", $fecha);
-	$horas = explode(" ", $hora);
-	//echo '<br>';
-	//echo $d1->format('Y-m-d H:i:s');
-	$mysqltime = date ("Y-m-d H:i:s", $d1->getTimestamp());
-
-	//Se agregan los datos
-
-	$sql = "INSERT INTO cobro (usuario, correo, origen, destino, idCobro, idReserva, precio, urlCobro) VALUES('$usuario','$correo','$origen','$destino','$idCobro','$idCobro','$idReserva','$precio','$urlCobro')";
-
-	$resultado = $con->query($sql);
-
-	mysqli_close($con);
-
-	//redireccionar a programas
-	header("location:/admin/reservas");
+		//redireccionar a programas
+		header("location:/admin/reservas");
 		
 	} catch (Exception $e) {
 	    echo $e->getMessage();
