@@ -46,10 +46,16 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="form-group">
-                            <label for="nombre" class="control-label col-sm-4">Dirección</label>
+                            <label for="nombre" class="control-label col-sm-4">Origen</label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="direccion" id="direccion" type="text" required />
                            </div>                       
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre" class="control-label col-sm-4">Destino</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="destino" id="destino" type="text" max-lenght required />
+                           </div>
                         </div>
                         <div class="form-group">
                             <label for="nombre" class="control-label col-sm-4">Solicitante</label>
@@ -92,6 +98,7 @@
         hora = $("#hora").val();
         solicitante = $("#solicitante").val();
         direccion = $("#direccion").val();
+        destino = $("#destino").val();
         comentario = $("#comentario").val();
         telefono = $("#telefono").val();
         correo = $("#correo").val();
@@ -103,6 +110,7 @@
                 "hora" : hora,
                 "solicitante" : solicitante,
                 "direccion" : direccion,
+                "destino" : destino,
                 "comentario" : comentario,
                 "telefono" : telefono,
                 "correo" : correo
@@ -133,6 +141,7 @@
                         $("#hora").val("");
                         $("#solicitante").val("");
                         $("#direccion").val("");
+                        $("#destino").val("");
                         $("#comentario").val("");
                         $("#telefono").val("");
                         $("#correo").val("");
