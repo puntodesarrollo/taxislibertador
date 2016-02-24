@@ -90,6 +90,7 @@
 					<th>Confirmado</th>
 					<th>Ver Detalles</th>
 					<th>Marcar Confirmado/No Confirmado</th>
+					<th>Generar Cobro</th>
 					<th>Editar</th>
 					<th>Eliminar</th>
 				</tr>
@@ -115,6 +116,7 @@
 								<td>'. $fila["realizado"] .'</td>
 								<td><a href="detalles.php?t='.$ID.'"><span class="glyphicon glyphicon-search text-primary"></span></a></td>
 								<td><a href="marcar.php?t='.$ID.'"><span class="glyphicon glyphicon-check text-primary"></span></a></td>
+								<td><a href="pago.php?t='.$ID.'"><span class="glyphicon glyphicon-usd text-primary"></span></a></td>
 								<td><a href="editar.php?t='.$ID.'"><span class="glyphicon glyphicon-edit text-primary"></span></a></td>								
 								<td><a href="#" data-toggle="modal" data-target="#myModal" onclick="funcionDelete(\''.$ID.'\')">
 										<span class="glyphicon glyphicon-remove-circle text-danger"></span>
