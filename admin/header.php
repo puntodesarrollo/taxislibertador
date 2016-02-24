@@ -45,6 +45,7 @@ $sesion = include $_SERVER['DOCUMENT_ROOT']."/admin/verificarSesion.php";
 		<div id="navbarCollapse" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 			<li><a href="/admin/reservas">Reservas</a></li>
+			<li><a href="/admin/cobros">Cobros</a></li>
 			<li><a href="/admin/galeria">Galeria</a></li>			
 			<li><a href="/admin/servicios">Servicios Empresa</a></li>
 			<li><a href="/admin/about.php">Quienes Somos/Historia Empresa</a></li>

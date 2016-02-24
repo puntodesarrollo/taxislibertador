@@ -4,6 +4,7 @@
 	$hora = $_POST["hora"];
 
 	$direccion = $_POST["direccion"];
+	$destino = $_POST["destino"];
 	$comentario = $_POST["comentario"];
 	$solicitante = $_POST["solicitante"];
 	$telefono = $_POST["telefono"];
@@ -48,7 +49,7 @@
 
 	//Se agregan los datos
 
-	$sql = "INSERT INTO reservas (fecha,direccion, solicitante, comentario, telefono, correo) VALUES('".$d1->format('Y-m-d H:i:s')."','$direccion','$solicitante', '$comentario', '$telefono', '$correo')";
+	$sql = "INSERT INTO reservas (fecha,direccion, destino, solicitante, comentario, telefono, correo) VALUES('".$d1->format('Y-m-d H:i:s')."','$direccion','$destino','$solicitante', '$comentario', '$telefono', '$correo')";
 
 	$resultado = $con->query($sql);
 
@@ -63,7 +64,8 @@
 				  " Detalles:\n \nNombre Contacto: ".$solicitante ."\n ".
 				  "Fecha: ".$fecha ."\n ".
 				  "Hora: ".$hora ."\n ".
-				  "Dirección del servicio: ".$direccion ."\n ".
+				  "Origen del servicio: ".$direccion ."\n ".
+				  "Destino del servicio: ".$destino ."\n ".
 				  "Telefono: ".$telefono ."\n ".
 				  "Correo electrónico: ".$correo.
 				  "\n\n Comentario sobre el servicio: \n ".$comentario;
@@ -77,7 +79,8 @@
 				  " Detalles:\n \nNombre Contacto: ".$solicitante ."\n ".
 				  "Fecha: ".$fecha ."\n ".
 				  "Hora: ".$hora ."\n ".
-				  "Dirección del servicio: ".$direccion ."\n ".
+				  "Origen del servicio: ".$direccion ."\n ".
+				  "Destino del servicio: ".$destino ."\n ".
 				  "Telefono: ".$telefono ."\n ".
 				  "Correo electrónico: ".$correo.
 				  "\n\n Comentario sobre el servicio: \n ".$comentario.

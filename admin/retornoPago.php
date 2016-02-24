@@ -5,8 +5,9 @@ require  $_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php';
 $receiver_id = 43182;
 $secret = '7b32f743f795ac77cd9e7b99c1ccece20d1921cb';
 
-$api_version = $_POST["api_version"];  // Parámetro api_version
-$notification_token = $_POST["notification_token"]; //Parámetro notification_token
+echo $api_version;
+echo "<br>".$notification_token;
+exit;
 
 try {
     if ($api_version == '1.3') {
@@ -21,16 +22,26 @@ try {
         $response = $payments->paymentsGet($notification_token);
         if ($response->getReceiverId() == $receiver_id) {
             if ($response->getStatus() == 'done') {
-                // marcar el pago como completo y entregar el bien o servicio
-                $tema = "Pago desde taxislibertador.cl";
+                
+                $respuesta = json_decode($response);
 
-                //$to = 'contacto@taxislibertador.cl';
-                $to = "gpuellestorres@gmail.com";
-                $email_subject = $tema;
-                $email_body = $response;
-                $headers = $correo;
+                $idCobro = $respuesta->payment_id;
 
-                mail($to,$email_subject,$email_body,$headers);
+                //Se actualiza el pago como realizado en la BD
+                        //agregar los datos a la BD
+                $con = include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
+
+                //Se agregan los datos:
+
+                $sql = "UPDATE cobro SET pagado='Sí' WHERE idCobro='$idCobro'";
+
+                $resultado = $con->query($sql);
+
+                mysqli_close($con);
+                exit;
+
+                //redireccionar a cobros
+                header("location:/admin/cobros");
             }
         } else {
             // receiver_id no coincide
