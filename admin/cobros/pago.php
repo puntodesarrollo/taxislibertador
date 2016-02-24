@@ -57,6 +57,8 @@ else
              <div class="page-header">
 			 <h2 class="text-center">Generar Pago</h2>
 			</div>     
+            <div class="rows">
+			<div class="col-md-8 col-sm-offset-2">
             <form action="crearPago.php" method="post" enctype="multipart/form-data">
 			   
 			    <div class="form-group" hidden>
@@ -87,5 +89,7 @@ else
 						<a href="/admin/cobros" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i>&nbsp;Cancelar</a>
 						<button id="botonAgregar" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i>&nbsp;Generar</button>
 					</div>
-			</form>    
+			</form>
+			</div>
+			</div>    
 		</div>	    
