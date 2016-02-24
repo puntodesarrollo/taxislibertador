@@ -1,33 +1,32 @@
 <?php
 require  $_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php';
 
-//Mandar correo
-$name = "Sistema de pagos taxis libertador";
-
-$email_address = "gpuellestorres@gmail.com";
-$tema = "Pago desde taxislibertador.cl";
-
-
-$fechaActual=date('Y-m-d');
-//$to='contacto@taxislibertador.cl';
-$to = $email_address;
-$email_subject = $tema;
-$email_body = "Ha recibido un nuevo pago desde la página web taxislibertador.cl. Revise su correo electrónico\n\n".
-$headers = $email_address;  
-
-include $_SERVER['DOCUMENT_ROOT']."/admin/conexion.php";
-$resultado = $con->query("INSERT INTO contacto (nombre_contacto,mail_contacto,mensaje_contacto,telefono_contacto,fecha) VALUES('$name','$email_address','$message','$fono','$fechaActual')");
-mysqli_close($con);
-
-mail($to,$email_subject,$email_body,$headers);
-
-
 //Se obtiene el pago
 $receiver_id = 43182;
 $secret = '7b32f743f795ac77cd9e7b99c1ccece20d1921cb';
 
 $api_version = $_POST["api_version"];  // Parámetro api_version
 $notification_token = $_POST["notification_token"]; //Parámetro notification_token
+
+$con = include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
+
+//Se agregan los datos:
+
+$sql = "INSERT INTO pagos_recibidos(api_version, notification_token) VALUES('$api_version','$notification_token')";
+
+$resultado = $con->query($sql);
+
+mysqli_close($con);
+
+$con = include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
+
+//Se agregan los datos:
+
+$sql = "INSERT INTO log(texto) VALUES('notificación de Pago Token: $notification_token')";
+
+$resultado = $con->query($sql);
+
+mysqli_close($con);
 
 try {
     if ($api_version == '1.3') {
@@ -53,11 +52,18 @@ try {
                 //Se agregan los datos:
 
                 $sql = "UPDATE cobro SET pagado='SI' WHERE idCobro='$idCobro'";
+                //$sql = "UPDATE cobro SET pagado='SI'";
+
+                $resultado = $con->query($sql);
+
+                //Se registra el pago en el log
+
+                $sql = "INSERT INTO log(texto) VALUES('Pago de Servicio ID: $$idCobro')";
+                //$sql = "UPDATE cobro SET pagado='SI'";
 
                 $resultado = $con->query($sql);
 
                 mysqli_close($con);
-                exit;
             }
         } else {
             // receiver_id no coincide

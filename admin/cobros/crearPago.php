@@ -38,8 +38,8 @@
 	        , "Cobro por Servicio desde $origen hasta $destino"
 	        , null, null
 	        , null
+	        , null
 	        , "http://taxislibertador.cl/logo.png"
-	        , "http://www.taxislibertador.cl/retornoPago.php"
 	        , null, null, null
 	        , true
 	        , $usuario

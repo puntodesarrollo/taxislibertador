@@ -64,73 +64,76 @@
     include $_SERVER['DOCUMENT_ROOT']."/admin/header.php";
 
 ?>
-
-<div class="col-sm-8 col-sm-offset-2">
-	<div class="rows">
-		<br>
-		<br>
-		 <h3 class="text-center">Detalles de Reserva</h3>
-	    <form>			   
-		    <div class="form-group">
-		        <label for="inputEmail">Fecha</label>
-		        <input class="form-control" id="fecha" name="fecha" value="<?php echo $fecha; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Teléfono</label>
-		        <input class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>" readonly>
-		    </div>	    
-		    <div class="form-group">
-		        <label for="inputPassword">Correo</label>
-		        <input class="form-control" id="correo" name="correo" value="<?php echo $correoReserva; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Comentario</label>
-		        <textarea class="form-control" id="comentario" name="comentario" readonly rows="4"><?php echo $comentario; ?></textarea>
-		    </div>
-		</form>    
+<br>
+<br>
+<div class="container">
+	<div class="col-md-4">
+		<div class="rows">
+			<div class="page-header"><h3 class="text-center">Detalles de Reserva</h3></div>
+		    <form>			   
+			    <div class="form-group">
+			        <label for="inputEmail">Fecha</label>
+			        <p><?php echo $fecha; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Teléfono</label>
+			        <p><?php echo $telefono; ?><p>
+			    </div>	    
+			    <div class="form-group">
+			        <label for="inputPassword">Correo</label>
+			        <p><?php echo $correoReserva; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Comentario</label>
+			        <p><?php echo $comentario; ?><p>
+			    </div>
+			</form>    
+		</div>
 	</div>
-	<hr>
-	 <div class="rows">
-	 	<h3 class="text-center">Detalles de Cobro</h3>
-	    <form>			   
-		    <div class="form-group">
-		        <label for="inputEmail">Usuario</label>
-		        <input class="form-control" id="usuario" name="usuario" value="<?php echo $usuario; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Correo</label>
-		        <input class="form-control" id="correo" name="correo" value="<?php echo $correo; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Origen</label>
-		        <input class="form-control" id="origen" name="origen" value="<?php echo $origen; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Destino</label>
-		        <input class="form-control" id="destino" name="destino" value="<?php echo $destino; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Precio</label>
-		        <input class="form-control" id="precio" name="precio" value="<?php echo $precio; ?>" readonly>
-		    </div>
-		</form>
-	</div>
-	<hr>
-	<div class="rows">
-	     <h3 class="text-center">Detalles de Pago Online en Khipu</h3>
-	    <form>			   
-		    <div class="form-group">
-		        <label for="inputEmail">ID de Cobro</label>
-		        <input class="form-control" id="idCobro" name="idCobro" value="<?php echo $idCobro; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">URL de Cobro</label>
-		        <input class="form-control" id="urlCobro" name="urlCobro" value="<?php echo $urlCobro; ?>" readonly>
-		    </div>
-		    <div class="form-group">
-		        <label for="inputPassword">Pagado</label>
-		        <input class="form-control" id="pagado" name="pagado" value="<?php echo $pagado; ?>" readonly>
-		    </div>
-		</form>    
+	<div class="col-md-4">
+		 <div class="rows">
+		 	<div class="page-header"><h3 class="text-center">Detalles de Cobro</h3></div>
+		    <form>			   
+			    <div class="form-group">
+			        <label for="inputEmail">Usuario</label>
+			        <p><?php echo $usuario; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Correo</label>
+			        <p><?php echo $correo; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Origen</label>
+			        <p><?php echo $origen; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Destino</label>
+			        <p><?php echo $destino; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Precio</label>
+			        <p><?php echo $precio; ?><p>
+			    </div>
+			</form>
+		</div>
+		</div>
+	<div class="col-md-4">
+		<div class="rows">
+			<div class="page-header"><h3 class="text-center">Detalles de Pago Khipu</h3></div>
+		    <form>			   
+			    <div class="form-group">
+			        <label for="inputEmail">ID de Cobro</label>
+			        <p><?php echo $idCobro; ?><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">URL de Cobro</label>
+			        <p><a target="_blank" href='<?php echo $urlCobro; ?>'><?php echo $urlCobro; ?></a><p>
+			    </div>
+			    <div class="form-group">
+			        <label for="inputPassword">Pagado</label>
+			        <p><?php echo $pagado; ?><p>
+			    </div>
+			</form>    
+		</div>
 	</div>
 </div>
