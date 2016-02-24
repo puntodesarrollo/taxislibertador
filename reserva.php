@@ -78,7 +78,7 @@
                         <div class="form-group">
                             <label for="nombre" class="control-label col-sm-4">Comentarios del Servicio</label>
                             <div class="col-sm-8">
-                                <textarea rows="5" name="comentario" id="comentario" class="form-control" placeholder="comentarios sobre el servicio" maxlength="2000" style="width:100% !important" required ></textarea>
+                                <textarea rows="5" name="comentario" id="comentario" class="form-control" placeholder="comentarios sobre el servicio" maxlength="2000" style="width:100% !important"></textarea>
                            </div>
                         </div>
                         <div class="col-md-3 col-md-offset-9">

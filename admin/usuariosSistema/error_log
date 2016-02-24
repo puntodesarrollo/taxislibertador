@@ -1,4 +1,0 @@
-[24-Nov-2015 10:44:47 America/Santiago] PHP Notice:  A session had already been started - ignoring session_start() in /home/cpu16669/public_html/admin/verificarSesion.php on line 3
-[24-Nov-2015 10:57:05 America/Santiago] PHP Notice:  A session had already been started - ignoring session_start() in /home/cpu16669/public_html/admin/verificarSesion.php on line 3
-[24-Nov-2015 11:16:36 America/Santiago] PHP Notice:  A session had already been started - ignoring session_start() in /home/cpu16669/public_html/admin/verificarSesion.php on line 3
-[24-Nov-2015 12:08:03 America/Santiago] PHP Notice:  A session had already been started - ignoring session_start() in /home/cpu16669/public_html/admin/verificarSesion.php on line 3

@@ -23,7 +23,7 @@
 	        , null, null, null, null, null, null, null, null, null, null
 	        , true
 	        , 'Estefanía Palacios Cortés'
-	        , 'estefaniapc05@gmail.com'
+	        , '$correo'
 	        , true
 	    );
 
