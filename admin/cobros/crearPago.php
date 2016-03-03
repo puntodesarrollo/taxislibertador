@@ -8,8 +8,8 @@
 		}
 
 	// Debemos conocer el $receiverId y el $secretKey de ante mano.
-	$receiverId = 43182;
-	$secretKey = '7b32f743f795ac77cd9e7b99c1ccece20d1921cb';
+	$receiverId = 56247;
+	$secretKey = 'b91a4947d8326319e66fa13abd6d4dd84661c587';
 
 	$correo = $_POST["correo"];
 	$origen = $_POST["origen"];

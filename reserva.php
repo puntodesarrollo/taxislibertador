@@ -14,6 +14,7 @@
                     <h1 class="section-heading">Taxis El Libertador</h1>
                     <h2 class="section-subheading text-muted">52 2512816 - 963030062</h2>
                     <h3 class="section-subheading text-muted">contacto@taxislibertador.cl<br><br>18 de septiembre 5083, Estación Paipote, Región de Atacama</h3>
+                    <h2 class="section-subheading text-danger">SERVICIO LAS 24 HORAS</h3>
                     <br>
                     <img class="img-rounded img-responsive" src="img2.jpg" width="100%" alt="">
                 </div>

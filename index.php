@@ -72,6 +72,9 @@
                         <a class="page-scroll" href="#about">Quiénes Somos</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#clients">Nuestros Clientes</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#portfolio">Nuestra Flota</a>
                     </li>
                     <li>
@@ -90,6 +93,7 @@
     <?php
         include $_SERVER['DOCUMENT_ROOT']."/reserva.php";
         include $_SERVER['DOCUMENT_ROOT']."/about.php";
+        include $_SERVER['DOCUMENT_ROOT']."/clients.php";
         include $_SERVER['DOCUMENT_ROOT']."/portfolio.php";
         include $_SERVER['DOCUMENT_ROOT']."/services.php";
         include $_SERVER['DOCUMENT_ROOT']."/contact.php";

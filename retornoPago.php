@@ -2,8 +2,8 @@
 require  $_SERVER['DOCUMENT_ROOT']. '/vendor/autoload.php';
 
 //Se obtiene el pago
-$receiver_id = 43182;
-$secret = '7b32f743f795ac77cd9e7b99c1ccece20d1921cb';
+$receiver_id = 56247;
+$secret = 'b91a4947d8326319e66fa13abd6d4dd84661c587';
 
 $api_version = $_POST["api_version"];  // Parámetro api_version
 $notification_token = $_POST["notification_token"]; //Parámetro notification_token
