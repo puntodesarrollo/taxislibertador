@@ -1,5 +1,5 @@
 <!-- About Section -->
-    <section id="about">
+    <section id="about" style="padding:30px 0px 30px 0px">
         <div class="container">
             <?
             $conexion2=include $_SERVER['DOCUMENT_ROOT']."/admin/crearConexion.php";
